@@ -2581,7 +2581,7 @@ datatables.net-scroller@>=2.0.5:
     datatables.net ">=1.11.3"
     jquery ">=1.7"
 
-datatables.net-searchbuilder-bs4@^1.3.1:
+datatables.net-searchbuilder-bs4@^1.3.4:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/datatables.net-searchbuilder-bs4/-/datatables.net-searchbuilder-bs4-1.3.4.tgz#2c326e10e583757cc59dba26f9b0042cf0349039"
   integrity sha512-Z4DaWb/HYre0h6PhOGhudgCsU1KrxRxqs3S6IcQ8h90n/llAgSBQ1JRG9WUnnl8Zv8udazHV5atIoXg2rj8cVA==
