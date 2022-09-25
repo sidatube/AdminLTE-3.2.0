@@ -482,14 +482,16 @@
     document.addEventListener('DOMContentLoaded', function () {
       const urlParams = new URLSearchParams(window.location.search);
       const id = urlParams.get('id');
-      
+
       initDropdownlist()
       settingSelect()
       settingSelectTypeofStory()
-      if (id)
-      document.getElementById('titelEdit').innerText="Chỉnh sửa"
-      document.getElementById('btnSubmit').innerText="Lưu"
+      if (id) {
+        document.getElementById('titelEdit').innerText = "Chỉnh sửa"
+        document.getElementById('btnSubmit').innerText = "Lưu"
         loadProductDetail(id);
+      }
+
       $('#summernote').summernote({
         minHeight: 200,
         maxHeight: 600,
