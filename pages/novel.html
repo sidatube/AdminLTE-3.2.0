@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Novel List</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../plugins/select2/css/select2.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="../dist/css/pagination.css">
+  <!-- note thêm css pagination  -->
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+
+</head>
+</head>
+
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+  <div class="wrapper">
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__wobble" src="../dist/img/icon.webp" alt="AdminLTELogo" height="60" width="60">
+    </div>
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-dark">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="../#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="../index3.html" class="nav-link">Home</a>
+        </li>
+
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+
+
+        <!-- Messages Dropdown Menu -->
+
+        <!-- Notifications Dropdown Menu -->
+
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="javascript:;" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="../index3.html" class="brand-link">
+        <img src="../dist/img/icon.webp" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+          style="opacity: .8">
+        <span class="brand-text font-weight-light">Light novel</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div
+        class="sidebar os-host os-theme-light os-host-overflow os-host-overflow-y os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-transition">
+        <div class="os-resize-observer-host observed">
+          <div class="os-resize-observer" style="left: 0px; right: auto;"></div>
+        </div>
+        <div class="os-size-auto-observer observed" style="height: calc(100% + 1px); float: left;">
+          <div class="os-resize-observer"></div>
+        </div>
+        <div class="os-content-glue" style="margin: 0px -8px;"></div>
+        <div class="os-padding">
+          <div class="os-viewport os-viewport-native-scrollbars-invisible" style="overflow-y: scroll;">
+            <div class="os-content" style="padding: 0px 8px; height: 100%; width: 100%;">
+              <!-- Sidebar user panel (optional) -->
+              <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                  <img src="../dist/img/endenring.jpg" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                  <a href="../#" class="d-block">Admin</a>
+                </div>
+              </div>
+
+
+              <!-- Sidebar Menu -->
+              <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                  data-accordion="false">
+                  <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+
+
+
+                  <li class="nav-item">
+                    <a href="../#" class="nav-link">
+                      <i class="nav-icon fas fa-chart-pie"></i>
+                      <p>
+                        Users
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="../pages/charts/chartjs.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>ChartJS</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../pages/charts/flot.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Flot</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../pages/charts/inline.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Inline</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../pages/charts/uplot.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>uPlot</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="../#" class="nav-link">
+                      <i class="nav-icon fas fa-circle"></i>
+                      <p>
+                        Novel
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="../#" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Level 2</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../#" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>
+                            Level 2
+                            <i class="right fas fa-angle-left"></i>
+                          </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                          <li class="nav-item">
+                            <a href="../#" class="nav-link">
+                              <i class="far fa-dot-circle nav-icon"></i>
+                              <p>Level 3</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="../#" class="nav-link">
+                              <i class="far fa-dot-circle nav-icon"></i>
+                              <p>Level 3</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="../#" class="nav-link">
+                              <i class="far fa-dot-circle nav-icon"></i>
+                              <p>Level 3</p>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../#" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Level 2</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="../#" class="nav-link">
+                      <i class="nav-icon fas fa-chart-pie"></i>
+                      <p>
+                        Translation teams
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="../pages/charts/chartjs.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>ChartJS</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../pages/charts/flot.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Flot</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../pages/charts/inline.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Inline</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../pages/charts/uplot.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>uPlot</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item menu-open">
+                    <a href="../#" class="nav-link active">
+                      <i class="nav-icon fas fa-search"></i>
+                      <p>
+                        Search
+                        <i class="fas fa-angle-left right"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="../pages/search/enhanced.html" class="nav-link active">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Enhanced</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-header">LABELS</li>
+
+                  <li class="nav-item">
+                    <a href="../#" class="nav-link">
+                      <i class="nav-icon far fa-circle text-danger"></i>
+                      <p class="text">Important</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../#" class="nav-link">
+                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <p>Warning</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../#" class="nav-link">
+                      <i class="nav-icon far fa-circle text-info"></i>
+                      <p>Informational</p>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- /.sidebar-menu -->
+            </div>
+          </div>
+        </div>
+        <div class="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden">
+          <div class="os-scrollbar-track">
+            <div class="os-scrollbar-handle" style="width: 100%; transform: translate(0px, 0px);"></div>
+          </div>
+        </div>
+        <div class="os-scrollbar os-scrollbar-vertical os-scrollbar-auto-hidden">
+          <div class="os-scrollbar-track">
+            <div class="os-scrollbar-handle" style="height: 57.1709%; transform: translate(0px, 0px);">
+            </div>
+          </div>
+        </div>
+        <div class="os-scrollbar-corner"></div>
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- note dùng code này -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">List truyện </h1>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <div class="col-md-10 mx-auto  ">
+        <div class="card-body p-0">
+          <div class="card-header">
+            <form name="searchForm" action="javascript:;" class="row">
+              <div class="form-group col-md-2">
+                <label for="novelName">Tên tác phẩm:</label>
+                <input class="form-control" id="novelName" name="novelName" placeholder="Tên tác phẩm">
+              </div>
+              <div class="form-group col-md-2">
+                <label for="authorName">Tên tác giả:</label>
+                <input class="form-control" id="authorName" name="authorName"  placeholder="Tên tác giả">
+              </div>
+              <div class="form-group col-md-2">
+                <label for="artistName">Tên họa sĩ:</label>
+                <input class="form-control" id="artistName" name="artistName" placeholder="Tên họa sĩ">
+              </div>
+              <div class="col-md-2">
+                <label for="types">Thể loại:</label>
+                <select id="types" class="select2" multiple="multiple" style="width:100%">
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label for="typeOfStories">Loại truyện:</label>
+                <select id="typeOfStories" multiple="multiple" class="select2" style="width:100%">
+                  <option value="TRANSLATION">Truyện dịch</option>
+                  <option value="CONVERT">Máy dịch</option>
+                  <option value="COMPOSED">Sáng tác</option>
+                </select>
+              </div>
+              <div class=" form-group col-md-2">
+                <label for="novelName" class="w-100">‌</label>
+
+                <button type="button" onclick="search()"
+                  class=" mx-auto btn btn-outline-light d-block align-items-center">
+                  Tìm kiếm
+                </button>
+              </div>
+
+            </form>
+          </div>
+
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th style="width: 10px">#</th>
+                <th>Ảnh đại diện</th>
+                <th style="width: 20%">Tên tác phẩm</th>
+                <th>Tác giả</th>
+                <th>Minh họa</th>
+                <th style="width: 20%">Thể loại</th>
+                <th style="width: 150px ;">Loại truyện</th>
+                <th> <a class="btn btn-outline-light" href="index-novel.html">
+                    Thêm truyện
+                  </a></th>
+              </tr>
+            </thead>
+            <tbody id="inner-data">
+
+            </tbody>
+          </table>
+          <div class="page-container" id="page-container" style="
+                    width: fit-content;
+                ">
+            <button class="first-page" disabled="">
+              <i class="fas fa-angle-double-left"></i>
+            </button>
+            <button class="prev-page" disabled="">
+              <i class="fas fa-angle-left"></i>
+            </button>
+            <div id="pagination">
+              <li class="pg-item active" data-page="1">
+                <a class="pg-link" href="#">1</a>
+              </li>
+              <li class="pg-item " data-page="2">
+                <a class="pg-link" href="#">2</a>
+              </li>
+            </div>
+            <button class="next-page">
+              <i class="fas fa-angle-right"></i>
+            </button>
+            <button class="last-page">
+              <i class="fas fa-angle-double-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2016 - 2022 <a href="../https://docln.net/">Light novel</a>.</strong> All rights
+    reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>contact : </b><a href="../https://www.facebook.com/minh.duc.030702/">232432432432</a>
+    </div>
+  </footer>
+  </div>
+  <!-- ./wrapper -->
+  <script src="../dist/js/pagination.js"></script>
+  <!-- note thêm js pagination -->
+  <!-- REQUIRED SCRIPTS -->
+  <script>
+    // chờ cây DOM được dựng thành công thì mới xử lý tiếp. 
+    var baseUrl = "https://novelread.herokuapp.com/api/v1"
+    // var baseUrl = "http://localhost:8080/api/v1"
+    // note chuyển vị trí obj ra ngoài 
+    const obj = {
+      "name": "",
+      "author": "",
+      "artist": "",
+      "typesId": [],
+      "typeOfStories": [],
+      "translationStatuses": [],
+      "index": 1,
+      "size": 10
+    }
+    const typeOfStories = {
+      "TRANSLATION": "Truyện dịch",
+      "CONVERT": "Máy dịch",
+      "COMPOSED": "Sáng tác"
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      callData() // note call api viết ra hàm riêng rồi vứt tên hàm vào đây
+      initDropdownlist()
+      $('#typeOfStories').select2({
+        placeholder: "Chọn loại truyện"
+      });
+    })
+
+    function initDropdownlist() {
+      var baseUrlType = "https://novelread.herokuapp.com/api/v1/type";
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            let types = JSON.parse(xhr.responseText);
+            const data = []
+            for (var i = 0; i < types.length; i++) {
+              let item = types[i];
+              data.push({
+                "id": item.name,
+                "text": item.name
+              })
+            }
+            $('#types').select2({
+              data: data,
+              placeholder: "Chọn thể loại"
+            });
+          } else {
+            alert('Không thể load thể loại!');
+          }
+        }
+      }
+      xhr.open('GET', baseUrlType, false);
+      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
+      xhr.setRequestHeader('Content-type', "application/json")
+      xhr.send();
+    }
+
+    function search() {
+      obj.name = document.forms['searchForm']['novelName'].value
+      obj.author = document.forms['searchForm']['authorName'].value
+      obj.artist = document.forms['searchForm']['artistName'].value
+      obj.typeOfStories = $("#typeOfStories").val()
+      obj.typesId = $("#types").val()
+      obj.index = 1
+      callData()
+    }
+
+    function callData() {
+      var xhr = new XMLHttpRequest(); // gọi grab
+      // xử lý kết quả trả về.
+      xhr.onreadystatechange = function () {
+        // khi trạng thái request đã kết thúc và status là thành công.
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          // console.log(xhr.responseText); // dữ liệu định dạng chuỗi có format kiểu json.
+          var data = JSON.parse(xhr.responseText); // chuyển từ chuỗi sang object json.
+          var tableTag = document.querySelector('#inner-data');
+          setValuePage(data.pageable.pageNumber + 1, data.totalPages) //note
+          var html = ""
+          for (let index = 0; index < data.content.length; index++) {
+            const element = data.content[index];
+            html += `<tr>
+                            
+            <td>${index + 1}</td>
+            <td><img width="180px" src="${element.avatar}"/></td>
+            <td>${element.name}</td>
+            <td>${element.author}</td>
+            <td>${element.artist}</td>
+            <td>${element.types.join(", ")}</td>  
+            <td >${typeOfStories[element.typeOfStory]}</td>
+                                        <td class="d-flex justify-content-center ">
+                                            <a href="index-novel.html?id=${element.id}" class="ml-4"><i class="fa-regular fa-pen-to-square"></i></a>
+                                            <a href="detail.html?id=${element.id}" class="ml-4"><i class="fa fa-info-circle"></i></a>
+                                            <a href="javascript:void(0)" class="ml-4"><i class="fa fa-trash" onclick="deleteProduct('${element.id}')"></i></a>
+                                        </td>
+                                    </tr>`;
+          }
+          tableTag.innerHTML = html
+        }
+      };
+      xhr.open('POST', `${baseUrl}/novel/admin`, false); // gửi đi đâu, theo cách nào.
+      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
+      xhr.setRequestHeader('Content-type', "application/json")
+      xhr.send(JSON.stringify(obj)); // phóng xe đi.   
+    }
+
+    function deleteProduct(id) {
+      if (id === undefined || id === null) {
+        return;
+      }
+      if (confirm('Are you sure?')) {
+        var xhr = new XMLHttpRequest(); // gọi grab
+        // xử lý kết quả trả về.
+        xhr.onreadystatechange = function () {
+          // khi trạng thái request đã kết thúc và status là thành công.
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            alert('Success');
+            callData()
+          }
+        };
+        xhr.open('DELETE', `${baseUrl}/novel/adminDelete?id=${id}`, true); // gửi đi đâu, theo cách nào.
+        xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
+        xhr.send(null); // phóng xe đi. 
+      }
+    }
+    // Note
+    document.querySelector(".page-container").onclick = function (e) {
+      obj.index = handleButton(e.target);
+      callData()
+    };
+
+    pg.onclick = (e) => {
+      const ele = e.target;
+      if (ele.dataset.page) {
+        const pageNumber = parseInt(e.target.dataset.page, 10);
+        obj.index = pageNumber
+        callData();
+      }
+    };
+    //note
+
+  </script>
+  <!-- jQuery -->
+  <script src="../plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- overlayScrollbars -->
+  <!-- <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
+  <!-- AdminLTE App -->
+  <script src="../dist/js/adminlte.js"></script>
+  <!-- Select2 -->
+  <script src="../plugins/select2/js/select2.full.min.js"></script>
+  <!-- PAGE PLUGINS -->
+  <!-- jQuery Mapael -->
+  <script src="../plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="../plugins/raphael/raphael.min.js"></script>
+  <script src="../plugins/jquery-mapael/jquery.mapael.min.js"></script>
+  <script src="../plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <!-- ChartJS -->
+  <script src="../plugins/chart.js/Chart.min.js"></script>
+
+  <!-- AdminLTE for demo purposes -->
+  <script src="../dist/js/isLogin.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <!-- <script src="../dist/js/pages/dashboard2.js"></script> -->
+  <script>
+    $(function () {
+      $('.select2').select2()
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="dist/css/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form name="user">
+      <div class="user-box">
+        <input type="text" onkeydown="onEvent(event)" name="username" required="">
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="password" onkeydown="onEvent(event)" class="myInput" name="password" required="">
+        <label>Password</label>
+      </div>
+      <a href="javascript:;" onclick="login()">
+        <span></span>
+        <span></span>
+        Submit
+      </a>
+    </form>
+  </div>
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {})
+
+  function login() {
+    var username = document.forms['user']['username'].value
+    var password = document.forms['user']['password'].value
+    var obj = {
+      "username": username,
+      "password": password
+    }
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4) {
+        if (this.status == 200) {
+          var jsonResponse = JSON.parse(xhttp.responseText)
+          var roles = jsonResponse.account.roles
+          if (roles.includes("admin") || roles.includes("mod")) {
+            localStorage.setItem("token", jsonResponse.accessToken)
+            localStorage.setItem("admin", JSON.stringify(jsonResponse.account))
+            window.location.href = 'index.html';
+          } else {
+            alert("Sai thong tin admin")
+          }
+        } else
+          alert("Sai thong tin")
+
+      }
+    };
+    xhttp.open("POST", "https://novelread.herokuapp.com/api/v1/login", false);
+    xhttp.setRequestHeader('Content-type', "application/json")
+    xhttp.send(JSON.stringify(obj));
+  }
+
+  function onEvent(event) {
+    if (event.keyCode === 13) {
+      login()
+    }
+  };
+
+</script>
+
+</html>

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Enhanced Search Form</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+
+</head>
+</head>
+
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+  <div class="wrapper">
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__wobble" src="../../dist/img/icon.webp" alt="AdminLTELogo" height="60" width="60">
+    </div>
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-dark">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="../../#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="../../index.html" class="nav-link">Home</a>
+        </li>
+
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="navbar-search" href="../../#" role="button">
+            <i class="fas fa-search"></i>
+          </a>
+          <div class="navbar-search-block">
+            <form class="form-inline">
+              <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-navbar" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li>
+
+        <!-- Messages Dropdown Menu -->
+
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="../../#">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-warning navbar-badge">15</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-item dropdown-header">15 Notifications</span>
+            <div class="dropdown-divider"></div>
+            <a href="../../#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i> 4 new messages
+              <span class="float-right text-muted text-sm">3 mins</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="../../#" class="dropdown-item">
+              <i class="fas fa-users mr-2"></i> 8 friend requests
+              <span class="float-right text-muted text-sm">12 hours</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="../../#" class="dropdown-item">
+              <i class="fas fa-file mr-2"></i> 3 new reports
+              <span class="float-right text-muted text-sm">2 days</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="../../#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="../../#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="../../#" role="button">
+            <i class="fas fa-th-large"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="../../index3.html" class="brand-link">
+        <img src="../../dist/img/icon.webp" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+          style="opacity: .8">
+        <span class="brand-text font-weight-light">Light novel</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div
+        class="sidebar os-host os-theme-light os-host-overflow os-host-overflow-y os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-transition">
+        <div class="os-resize-observer-host observed">
+          <div class="os-resize-observer" style="left: 0px; right: auto;"></div>
+        </div>
+        <div class="os-size-auto-observer observed" style="height: calc(100% + 1px); float: left;">
+          <div class="os-resize-observer"></div>
+        </div>
+        <div class="os-content-glue" style="margin: 0px -8px;"></div>
+        <div class="os-padding">
+          <div class="os-viewport os-viewport-native-scrollbars-invisible" style="overflow-y: scroll;">
+            <div class="os-content" style="padding: 0px 8px; height: 100%; width: 100%;">
+              <!-- Sidebar user panel (optional) -->
+              <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                  <img src="../../dist/img/endenring.jpg" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                  <a href="../../#" class="d-block">Admin</a>
+                </div>
+              </div>
+
+
+              <!-- Sidebar Menu -->
+              <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                  data-accordion="false">
+                  <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+
+
+
+                  <li class="nav-item">
+                    <a href="../../#" class="nav-link">
+                      <i class="nav-icon fas fa-chart-pie"></i>
+                      <p>
+                        Users
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="../../pages/charts/chartjs.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>ChartJS</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../pages/charts/flot.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Flot</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../pages/charts/inline.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Inline</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../pages/charts/uplot.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>uPlot</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="../../#" class="nav-link">
+                      <i class="nav-icon fas fa-circle"></i>
+                      <p>
+                        Novel
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="../../#" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Level 2</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../#" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>
+                            Level 2
+                            <i class="right fas fa-angle-left"></i>
+                          </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                          <li class="nav-item">
+                            <a href="../../#" class="nav-link">
+                              <i class="far fa-dot-circle nav-icon"></i>
+                              <p>Level 3</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="../../#" class="nav-link">
+                              <i class="far fa-dot-circle nav-icon"></i>
+                              <p>Level 3</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="../../#" class="nav-link">
+                              <i class="far fa-dot-circle nav-icon"></i>
+                              <p>Level 3</p>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../#" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Level 2</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="../../#" class="nav-link">
+                      <i class="nav-icon fas fa-chart-pie"></i>
+                      <p>
+                        Translation teams
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="../../pages/charts/chartjs.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>ChartJS</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../pages/charts/flot.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Flot</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../pages/charts/inline.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Inline</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../pages/charts/uplot.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>uPlot</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item menu-open">
+                    <a href="../../#" class="nav-link active">
+                      <i class="nav-icon fas fa-search"></i>
+                      <p>
+                        Search
+                        <i class="fas fa-angle-left right"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="../../pages/search/enhanced.html" class="nav-link active">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Enhanced</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-header">LABELS</li>
+
+                  <li class="nav-item">
+                    <a href="../../#" class="nav-link">
+                      <i class="nav-icon far fa-circle text-danger"></i>
+                      <p class="text">Important</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../../#" class="nav-link">
+                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <p>Warning</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../../#" class="nav-link">
+                      <i class="nav-icon far fa-circle text-info"></i>
+                      <p>Informational</p>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- /.sidebar-menu -->
+            </div>
+          </div>
+        </div>
+        <div class="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden">
+          <div class="os-scrollbar-track">
+            <div class="os-scrollbar-handle" style="width: 100%; transform: translate(0px, 0px);"></div>
+          </div>
+        </div>
+        <div class="os-scrollbar os-scrollbar-vertical os-scrollbar-auto-hidden">
+          <div class="os-scrollbar-track">
+            <div class="os-scrollbar-handle" style="height: 57.1709%; transform: translate(0px, 0px);"></div>
+          </div>
+        </div>
+        <div class="os-scrollbar-corner"></div>
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <a href="novel.html" class="m-0 text-light"> Trở về</a>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <div class="col-md-11 mx-auto  ">
+        <div class="card-body p-0">
+          <div class="card-header">
+            <h1 class="m-1">Thêm truyện </h1>
+          </div>
+          <div class="card-body">
+            <form action="javascript:;" class="row col-12 needs-validation" name="novelInfo" novalidate>
+              <div class="col-md-5 d-flex flex-column align-items-center">
+                <div>
+                  <img class="mx-auto" id="preview-img" src="../../dist/img/nocover.jpg" width="300px" alt="">
+                </div>
+                <input class="form-control" type="hidden" id="avatar" name="avatar">
+
+                <button type="button" id="upload_widget" class="mt-3 btn btn-outline-light">Chọn ảnh đại
+                  diện</button>
+              </div>
+              <div class="col-md-6">
+                <input type="hidden" id="novelId" name="novelId">
+                <div class="form-group">
+                  <label for="novelName">Tên tác phẩm:</label>
+                  <input class="form-control" id="novelName" name="name" placeholder="Tên tác phẩm" required>
+                  <div class="invalid-feedback">
+                    Không được bỏ trống tên tác phẩm
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="author">Tên tác giả:</label>
+                  <input class="form-control" id="author" name="author" placeholder="Tên tác giả">
+
+                </div>
+                <div class="form-group">
+                  <label for="artist">Tên họa sĩ:</label>
+                  <input class="form-control" id="artist" name="artist" placeholder="Tên họa sĩ">
+                </div>
+                <div class="form-group">
+                  <label for="types">Thể loại:</label>
+                  <select id="types" class="select2" multiple="multiple" style="width:100%">
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="typeOfStories">Loại truyện:</label>
+                  <select id="typeOfStories" class="select2" style="width:100%">
+                    <option value="TRANSLATION">Truyện dịch</option>
+                    <option value="CONVERT">Máy dịch</option>
+                    <option value="COMPOSED">Sáng tác</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-10 mx-auto mt-3">
+                <div class="form-group">
+                  <label for="summernote">Nội dung chương:</label>
+                  <textarea id="summernote">
+                      </textarea>
+                </div>
+                <div class="row ">
+                  <button class=" mx-auto btn btn-info w-25" type="submit" onclick="saveNovel()" id="btnSubmit">Thêm
+                    Truyện</button>
+
+                </div>
+
+              </div>
+
+
+            </form>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2016 - 2022 <a href="../../https://docln.net/">Light novel</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>contact : </b><a href="../../https://www.facebook.com/minh.duc.030702/">232432432432</a>
+    </div>
+  </footer>
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- REQUIRED SCRIPTS -->
+  <!-- jQuery -->
+  <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+  <!-- Summernote -->
+  <script>
+    (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+    const typeOfStories = {
+      "TRANSLATION": "Truyện dịch",
+      "CONVERT": "Máy dịch",
+      "COMPOSED": "Sáng tác"
+    }
+    const contentRoles = [
+      "Admin",
+      "mod",
+      "user",
+    ]
+    var objectToSend
+    var roles = "user"
+    var listTypes = []
+    var listTypeOfStories = "TRANSLATION"
+    // chờ document load đầy đủ, dựng cây DOM.
+    var baseUrlCreate = "https://novelread.herokuapp.com/api/v1/novel/create"
+    var baseUrlUpdate = "https://novelread.herokuapp.com/api/v1/novel/update"
+    document.addEventListener('DOMContentLoaded', function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id');
+      initDropdownlist()
+      settingSelect()
+      settingSelectTypeofStory()
+      if (id)
+        loadProductDetail(id);
+      $('#summernote').summernote({
+        minHeight: 200,
+        maxHeight: 600,
+        code: "<p><br></p>"
+      })
+
+
+    });
+
+    function saveNovel() {
+      var method = 'POST';
+      // lấy btn submit
+      var id = document.forms['novelInfo']['novelId'].value;
+      // lấy thông tin input
+      var inputName = document.forms['novelInfo']['name'];
+      var inputAuthor = document.forms['novelInfo']['author'];
+      var inputArtist = document.forms['novelInfo']['artist'];
+      var inputAvatar = document.forms['novelInfo']['avatar'];
+      var inputTypeOfStories = document.forms['novelInfo']['typeOfStories'];
+      var inputTypes = $('#types').select2('val');
+      var summary = $('#summernote').summernote('code')
+      objectToSend = {
+        'name': inputName.value,
+        'author': inputAuthor.value,
+        'artist': inputArtist.value,
+        'avatar': inputAvatar.value,
+        'typeOfStory': listTypeOfStories,
+        'types': listTypes,
+        'summary': summary,
+      }
+      var url = baseUrlCreate;
+
+      var data = JSON.stringify(objectToSend); // parse từ obj to string
+      if (id) {
+        method = 'PUT';
+        url = baseUrlUpdate
+        productDetail.name = inputName.value;
+        productDetail.author = inputAuthor.value;
+        productDetail.artist = inputArtist.value;
+        productDetail.avatar = inputAvatar.value;
+        productDetail.typeOfStory = listTypeOfStories;
+        productDetail.types = listTypes;
+        productDetail.summary = summary
+        data = JSON.stringify(productDetail)
+      }
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 201 || xhr.status === 200) {
+            alert('Thao tác thành công');
+            window.location.href = 'novel.html'; // đưa về trang danh sách sản phẩm.
+          } else {
+            alert('Thao tác thất bại');
+          }
+        }
+      }
+      console.log(objectToSend)
+      xhr.open(method, url, false);
+      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`);
+      xhr.send(data);
+    }
+
+    function settingSelect() {
+      $('#types').select2({
+        placeholder: "Chọn thể loại"
+      });
+
+      $('#types').on('change', function () {
+        listTypes = $("#types").val();
+        console.log(listTypes)
+      })
+    };
+
+    function settingSelectTypeofStory() {
+      $('#typeOfStories').select2({
+        placeholder: "Chọn loại truyện"
+      });
+
+      $('#typeOfStories').on('change', function () {
+        listTypeOfStories = $("#typeOfStories").val();
+      })
+    };
+
+    function loadProductDetail(id) {
+      var getProductDetailUrl = `https://novelread.herokuapp.com/api/v1/novel/detailAdmin?id=${id}`
+
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            productDetail = JSON.parse(xhr.responseText);
+            document.forms['novelInfo']['novelId'].value = productDetail.id;
+            document.forms['novelInfo']['name'].value = productDetail.name;
+            document.forms['novelInfo']['author'].value = productDetail.author;
+            document.forms['novelInfo']['artist'].value = productDetail.artist;
+            document.forms['novelInfo']['avatar'].value = productDetail.avatar;
+            var img = document.getElementById("preview-img");
+            img.src = productDetail.avatar
+            $('#types').val(productDetail.types).trigger('change');
+            $('#summernote').summernote('code', productDetail.summary)
+            $('#typeOfStories').val(productDetail.typeOfStory).trigger('change');
+
+          } else {
+            alert('Không thể load sản phẩm!');
+          }
+        }
+      }
+      xhr.open('GET', getProductDetailUrl, false);
+      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`);
+      xhr.setRequestHeader("Access-Control-Allow-Origin", '*');
+      xhr.setRequestHeader('Content-type', "application/json");
+      xhr.send();
+    }
+
+    var selectTag = document.querySelector('#types');
+
+    function initDropdownlist() {
+      var baseUrlType = "https://novelread.herokuapp.com/api/v1/type";
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            let types = JSON.parse(xhr.responseText);
+
+            for (var i = 0; i < types.length; i++) {
+              let item = types[i];
+              selectTag.innerHTML += `<option value="${item.name}">${item.name}</option>`;
+            }
+            //sau khi có value mới set thành select2 để tránh thư viện chạy trc thì không ra kết quả
+            $('.select2').select2();
+          } else {
+            alert('Không thể load thể loại!');
+          }
+        }
+      }
+      xhr.open('GET', baseUrlType, false);
+      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
+      xhr.setRequestHeader('Content-type', "application/json")
+      xhr.send();
+    }
+    var myWidget = cloudinary.createUploadWidget({
+      cloudName: 'thanhbc',
+      uploadPreset: 'ysy8ba1q'
+    }, (error, result) => {
+      if (!error && result && result.event === "success") {
+        var img = document.getElementById("preview-img");
+        img.src = result.info.secure_url
+        document.forms['novelInfo']['avatar'].value = result.info.secure_url
+      }
+    })
+    document.getElementById("upload_widget").addEventListener("click", function () {
+      myWidget.open();
+    }, false);
+
+  </script>
+  <script src="../../plugins/jquery/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- overlayScrollbars -->
+  <!-- <script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
+  <!-- AdminLTE App -->
+  <script src="../../dist/js/adminlte.js"></script>
+  <!-- Select2 -->
+  <script src="../../plugins/select2/js/select2.full.min.js"></script>
+  <!-- PAGE PLUGINS -->
+  <!-- jQuery Mapael -->
+  <script src="../../plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="../../plugins/raphael/raphael.min.js"></script>
+  <script src="../../plugins/jquery-mapael/jquery.mapael.min.js"></script>
+  <script src="../../plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <!-- ChartJS -->
+  <script src="../../plugins/chart.js/Chart.min.js"></script>
+
+  <!-- AdminLTE for demo purposes -->
+  <script src="../../dist/js/isLogin.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <!-- <script src="../../dist/js/pages/dashboard2.js"></script> -->
+
+  <script>
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+.series-gerne-item {
+    border-radius: 20px;
+    display: inline-block;
+    padding: 2.5px 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: hsla(0, 0%, 100%, .9);
+    background-color: #333;
+}
+
+.info-item .info-name {
+    font-weight: 700;
+    margin-right: 6px;
+}
+.series-summary h4{
+    font-weight: 700;
+    margin-bottom: 0.2em;
+}
+.summary-content p{
+    margin-bottom: 0.2rem;
+}
+.basic-section {
+    background-color: #1f1f1f;
+    border-color: #1f1f1f #111 #0a0a0a;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: none;
+}
+.basic-section .sect-header{
+    background-color: #2a2a2a;
+    border-bottom: none;
+    padding: 10px;
+}
+.basic-section .sect-title, .fs-4, .index-section .section-title, .last-topics .title, .profile-showcase header span, h4 {
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 26px;
+    line-height: 2.6rem;
+}
+.volume-cover .a6-ratio{
+    padding: 0 10px;
+}
+
+ ul.list-chapters {
+    list-style: none;
+    text-decoration: none;
+}
+ul.list-chapters li {
+    padding: 5px 10px;
+    position: relative;
+}
+ul.list-chapters li:nth-child(2n) {
+    background-color: #252525;
+}
+.btn-outline-light.li-btn{
+    border-color: #f8f9fa;
+}
+.img-thumbnail.hide{
+   
+        display: none;
+}

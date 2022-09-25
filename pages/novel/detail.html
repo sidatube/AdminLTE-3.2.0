@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Enhanced Search Form</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../../dist/css/novelDetail.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+
+
+</head>
+
+</head>
+
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+  <div class="wrapper">
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__wobble" src="../../dist/img/icon.webp" alt="AdminLTELogo" height="60" width="60">
+    </div>
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-dark">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="../../#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="../../index3.html" class="nav-link">Home</a>
+        </li>
+
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="navbar-search" href="../../#" role="button">
+            <i class="fas fa-search"></i>
+          </a>
+          <div class="navbar-search-block">
+            <form class="form-inline">
+              <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-navbar" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li>
+
+        <!-- Messages Dropdown Menu -->
+
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="../../#">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-warning navbar-badge">15</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-item dropdown-header">15 Notifications</span>
+            <div class="dropdown-divider"></div>
+            <a href="../../#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i> 4 new messages
+              <span class="float-right text-muted text-sm">3 mins</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="../../#" class="dropdown-item">
+              <i class="fas fa-users mr-2"></i> 8 friend requests
+              <span class="float-right text-muted text-sm">12 hours</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="../../#" class="dropdown-item">
+              <i class="fas fa-file mr-2"></i> 3 new reports
+              <span class="float-right text-muted text-sm">2 days</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="../../#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="../../#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="../../#" role="button">
+            <i class="fas fa-th-large"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="../../index3.html" class="brand-link">
+        <img src="../../dist/img/icon.webp" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+          style="opacity: .8">
+        <span class="brand-text font-weight-light">Light novel</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div
+        class="sidebar os-host os-theme-light os-host-overflow os-host-overflow-y os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-transition">
+        <div class="os-resize-observer-host observed">
+          <div class="os-resize-observer" style="left: 0px; right: auto;"></div>
+        </div>
+        <div class="os-size-auto-observer observed" style="height: calc(100% + 1px); float: left;">
+          <div class="os-resize-observer"></div>
+        </div>
+        <div class="os-content-glue" style="margin: 0px -8px;"></div>
+        <div class="os-padding">
+          <div class="os-viewport os-viewport-native-scrollbars-invisible" style="overflow-y: scroll;">
+            <div class="os-content" style="padding: 0px 8px; height: 100%; width: 100%;">
+              <!-- Sidebar user panel (optional) -->
+              <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                  <img src="../../dist/img/endenring.jpg" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                  <a href="../../#" class="d-block">Admin</a>
+                </div>
+              </div>
+
+
+              <!-- Sidebar Menu -->
+              <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                  data-accordion="false">
+                  <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+
+
+
+                  <li class="nav-item">
+                    <a href="../../#" class="nav-link">
+                      <i class="nav-icon fas fa-chart-pie"></i>
+                      <p>
+                        Users
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="../../pages/charts/chartjs.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>ChartJS</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../pages/charts/flot.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Flot</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../pages/charts/inline.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Inline</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../pages/charts/uplot.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>uPlot</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="../../#" class="nav-link">
+                      <i class="nav-icon fas fa-circle"></i>
+                      <p>
+                        Novel
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="../../#" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Level 2</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../#" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>
+                            Level 2
+                            <i class="right fas fa-angle-left"></i>
+                          </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                          <li class="nav-item">
+                            <a href="../../#" class="nav-link">
+                              <i class="far fa-dot-circle nav-icon"></i>
+                              <p>Level 3</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="../../#" class="nav-link">
+                              <i class="far fa-dot-circle nav-icon"></i>
+                              <p>Level 3</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="../../#" class="nav-link">
+                              <i class="far fa-dot-circle nav-icon"></i>
+                              <p>Level 3</p>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../#" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Level 2</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="../../#" class="nav-link">
+                      <i class="nav-icon fas fa-chart-pie"></i>
+                      <p>
+                        Translation teams
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="../../pages/charts/chartjs.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>ChartJS</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../pages/charts/flot.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Flot</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../pages/charts/inline.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Inline</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../../pages/charts/uplot.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>uPlot</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item menu-open">
+                    <a href="../../#" class="nav-link active">
+                      <i class="nav-icon fas fa-search"></i>
+                      <p>
+                        Search
+                        <i class="fas fa-angle-left right"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="../../pages/search/enhanced.html" class="nav-link active">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Enhanced</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-header">LABELS</li>
+
+                  <li class="nav-item">
+                    <a href="../../#" class="nav-link">
+                      <i class="nav-icon far fa-circle text-danger"></i>
+                      <p class="text">Important</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../../#" class="nav-link">
+                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <p>Warning</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../../#" class="nav-link">
+                      <i class="nav-icon far fa-circle text-info"></i>
+                      <p>Informational</p>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- /.sidebar-menu -->
+            </div>
+          </div>
+        </div>
+        <div class="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden">
+          <div class="os-scrollbar-track">
+            <div class="os-scrollbar-handle" style="width: 100%; transform: translate(0px, 0px);"></div>
+          </div>
+        </div>
+        <div class="os-scrollbar os-scrollbar-vertical os-scrollbar-auto-hidden">
+          <div class="os-scrollbar-track">
+            <div class="os-scrollbar-handle" style="height: 57.1709%; transform: translate(0px, 0px);"></div>
+          </div>
+        </div>
+        <div class="os-scrollbar-corner"></div>
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+    <!-- chapter-modal -->
+    <div class="modal fade" id="chapterModal" tabindex="-1" aria-labelledby="chapterModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="chapterModalLabel">Thêm chương </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="col-md-11 mx-auto needs-validation" action="javascript:;" id="chapterForm" name="chapterForm"
+              novalidate>
+              <input type="hidden" name="id" class="form-control" value="">
+              <div class="form-group">
+                <label for="chapterTitle">Tiêu đề chương:</label>
+                <input id="chapterTitle" name="title" class="form-control" placeholder="Tiêu đề " required>
+                <div class="invalid-feedback bg-light">
+                  Tiêu đề tập không được bỏ trống!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="chapterNumber">Số thứ tự: <strong>(dựa vào số này để sắp sếp chương từ nhỏ đến
+                    lớn) </strong></label>
+                <input type="number" step="0.01" name="number" class="form-control" id="chapterNumber"
+                  placeholder="Số thứ tự" required>
+                <div class="invalid-feedback bg-light">
+                  Số thứ tự không được bỏ trống!
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="numberTitle">Chương số:<strong>(điền những thứ như chương 6, hồi 6..., có thể bỏ qua)
+                  </strong></label>
+                <input id="numberTitle" name="numberTitle" class="form-control" id="numberTitle" placeholder="Tiêu đề ">
+              </div>
+              <div class="form-group">
+                <label for="volumeId">Tập:</label>
+                <select id="volumeId" class="select2 form-control" name="volumeId" style="width:100%">
+                </select> </div>
+              <div class="form-group">
+                <label for="summernote">Nội dung chương:</label>
+
+                <!-- /.card-header -->
+                <textarea id="summernote">
+                      </textarea>
+
+                <!-- /.col-->
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            <button type="submit" id="chapterModalBtn" form="chapterForm" onclick="checkClose('chap')"
+              class="btn btn-primary">Lưu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Thông tin truyện</h1>
+            </div>
+
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+      <!-- Main content -->
+      <section class="content">
+        <!-- Default box -->
+        <div class="card card-solid">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12 col-sm-4">
+                <h3 class="my-3"></h3>
+                <div class="col-12 d-flex justify-content-center">
+                  <img src="../../dist/img/nocover.jpg" style="width: 350px;" class="product-image" id="thumbnail">
+                </div>
+
+              </div>
+              <div class="col-12 col-sm-6">
+                <h3 class="my-3" id="name">name</h3>
+                <hr>
+                <div class="series-gernes mb-3" id="types">
+                  <span class="series-gerne-item">Action</span>
+                </div>
+                <div class="info-item mb-3">
+                  <span class="info-name">Tên khác:</span>
+                  <span class="info-value" id="otherName">Kotobuki Yasukiyo</span>
+                </div>
+                <div class="info-item mb-3">
+                  <span class="info-name">Tác giả:</span>
+                  <span class="info-value" id="author">Kotobuki Yasukiyo</span>
+                </div>
+                <div class="info-item mb-3">
+                  <span class="info-name">Minh họa:</span>
+                  <span class="info-value" id="artist">Kotobuki Yasukiyo</span>
+                </div>
+                <div class="info-item mb-3">
+                  <span class="info-name">Loại truyện:</span>
+                  <span class="info-value" id="typeOfStory">Kotobuki Yasukiyo</span>
+                </div>
+
+                <div class="series-summary">
+                  <h4>Tóm tắt:</h4>
+                  <div class="summary-content" id="summary">
+                    <p>Ông chú trung niên chết đi với vị thế top player trong game, kẻ đã hạ gục boss cuối Evil God.</p>
+                    <p>Chuyển sinh sang thế giới khác cùng sức mạnh overpower giết chết cả thánh thần.</p>
+                    <p>Bắt đầu hành trình mới nơi thế giới mới.</p>
+                    <p>Thế giới mới với nền văn minh ma pháp lạc hậu, hãy chuẩn bị run rẩy, cúi đầu trước bước chân
+                      chinh phạt của hiền giả FA 40 tuổi.</p>
+                    <p>"Ờh, tôi chỉ muốn kiếm mảnh vườn để trồng trọt chăn nuôi sống yên lành thôi ! Có bánh mì ăn là
+                      hạnh phúc rồi..."</p>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+            <hr>
+            <div class="row mt-4 volume-content">
+              <div class="col-12 mb-3">
+                <button class="btn btn-outline-light w-100" data-toggle="modal" onclick="resetVolumeForm()"
+                  data-target="#volumeModal"> Thêm tập </button>
+              </div>
+              <!-- modal volume-->
+              <div class="modal fade" id="volumeModal" tabindex="-1" role="dialog" aria-labelledby="volumeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="volumeModalLabel">Thêm tập</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- body -->
+                      <form class="row needs-validation" name="volumeForm " action="javascript:;" id="volumeForm"
+                        novalidate>
+                        <div class="col-12 col-md-6">
+                          <div class="">
+                            <label for="Thumbnail">Ảnh đại diện </label>
+                            <img src="" style="width: 300px;height: auto;"
+                              class="img-thumbnail preview-img hide form-control" id="preview-img">
+                            <input type="hidden" class="form-control" value="" id="Thumbnail" name="thumbnail">
+                            <input type="hidden" class="form-control" value="" name="id">
+                          </div>
+
+                          <button type="button" id="upload_widget" class="mt-5 btn btn-outline-light">Chọn ảnh đại
+                            diện</button>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="card-body">
+                            <div class="form-group">
+                              <label for="volumeTitle">Tiêu đề tập:</label>
+                              <input id="volumeTitle" name="title" class="form-control" id="volumeTitle"
+                                placeholder="Tiêu đề " required>
+                              <div class="invalid-feedback bg-light">
+                                Tiêu đề tập không được bỏ trống!
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="volumeNumber">Số thứ tự: <strong>(dựa vào số này để sắp sếp tập từ nhỏ đến
+                                  lớn) </strong></label>
+                              <input type="number" step="0.01" name="number" class="form-control" id="volumeNumber"
+                                placeholder="Số thứ tự" required>
+                              <div class="invalid-feedback bg-light">
+                                Số thứ tự không được bỏ trống!
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                      <button type="submit" form="volumeForm" id="btnVolumeForm" onclick="checkClose('vol')"
+                        class="btn btn-primary">Thêm
+                        mới</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12" id="volumeList">
+
+              </div>
+
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+      </section>
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2016 - 2022 <a href="../../https://docln.net/">Light novel</a>.</strong> All rights
+    reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>contact : </b><a href="../../https://www.facebook.com/minh.duc.030702/">232432432432</a>
+    </div>
+  </footer>
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- REQUIRED SCRIPTS -->
+  <!-- jQuery -->
+  <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+
+  <script>
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            debugger
+
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+              canClose = false
+            } else
+              canClose = true
+
+            form.classList.add('was-validated');
+            setTimeout(() => {
+              form.classList.remove('was-validated');
+            }, 3000)
+          }, false);
+        });
+      }, false);
+    })();
+    // chờ cây DOM được dựng thành công thì mới xử lý tiếp. 
+    const typeOfStories = {
+      "TRANSLATION": "Truyện dịch",
+      "CONVERT": "Máy dịch",
+      "COMPOSED": "Sáng tác"
+    }
+    var listVolume
+    var canClose = true
+    var chapterDetail
+    const urlParams = new URLSearchParams(window.location.search);
+    const novelId = urlParams.get('id');
+    if (!novelId) {
+      window.location.href = "novel.html"
+    }
+    var detailUrl = `https://novelread.herokuapp.com/api/v1/novel/detailAdmin?id=${novelId}`;
+    var volumeUrl = "https://novelread.herokuapp.com/api/v1/novel/volume"
+    var chapterUrl = "https://novelread.herokuapp.com/api/v1/novel/chapter"
+
+    document.addEventListener('DOMContentLoaded', function () {
+      callData()
+      $('#summernote').summernote({
+        minHeight: 200,
+        maxHeight: 600
+      })
+      $('#volumeId').select2({
+        placeholder: "Chọn tập"
+      });
+    })
+
+    function openChapterPopup(volId) {
+      popupVolumeId = volId
+      var volume = listVolume.find(e => e.id == volId)
+      //reset
+      document.forms['chapterForm']['id'].value = null
+      document.forms['chapterForm']['numberTitle'].value = null
+      document.forms['chapterForm']['number'].value = volume.chapters.length
+      document.forms['chapterForm']['title'].value = null
+      $("#summernote").summernote("code", "<p><br></p>");
+      document.getElementById("chapterModalLabel").innerText = "Thêm chương";
+
+      var converter = []
+      listVolume.forEach(e => {
+        converter.push({
+          id: e.id,
+          text: e.title,
+        })
+      })
+      $('#volumeId').select2({
+        data: converter,
+        dropdownParent: $('#chapterModal'),
+        theme: 'bootstrap4',
+      });
+      $('#volumeId').val(volId).trigger('change');
+    }
+
+    function checkClose(str) {
+      setTimeout(() => {
+        if (!canClose) {
+          return
+        }
+        if (str === 'chap')
+          saveChapter()
+        else
+          submitVolumeForm()
+      }, 500)
+    }
+
+    function saveChapter() {
+      var id = document.forms['chapterForm']['id'].value
+      var numberTitle = document.forms['chapterForm']['numberTitle'].value
+      var number = document.forms['chapterForm']['number'].value
+      var title = document.forms['chapterForm']['title'].value
+      var content = $('#summernote').summernote('code')
+      var volumeId = $('#volumeId').select2('val');
+      if (!content) {
+        alert("Không được để trống nội dung")
+        return
+      }
+      var chapter = {
+        "id": id,
+        "numberTitle": numberTitle,
+        "number": number,
+        "title": title,
+        "content": content,
+        "volumeId": volumeId
+      }
+      var data = JSON.stringify(chapter)
+      method = "POST"
+      if (id) {
+        method = "PUT"
+        chapterDetail.numberTitle = numberTitle
+        chapterDetail.number = number
+        chapterDetail.content = content
+        chapterDetail.title = title
+        chapterDetail.volumeId = volumeId
+        data = JSON.stringify(chapterDetail)
+      }
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200 || xhr.status == 201) {
+            alert("Thành công!")
+            callData()
+          } else {
+            alert("Thất bại")
+          }
+          $('#chapterModal').modal('hide')
+
+        }
+
+      }
+      xhr.open(method, chapterUrl, false);
+      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`);
+      xhr.setRequestHeader('Content-type', "application/json");
+      xhr.send(data);
+    }
+
+    function deleteChapter(id) {
+      if (id === undefined || id === null) {
+        return;
+      }
+      if (confirm('Bạn chắc chán muốn xóa?')) {
+        var xhr = new XMLHttpRequest(); // gọi grab
+        // xử lý kết quả trả về.
+        xhr.onreadystatechange = function () {
+          // khi trạng thái request đã kết thúc và status là thành công.
+          if (xhr.readyState == 4) {
+            if ((xhr.status == 200 || xhr.status == 201)) {
+              alert('Xóa thành công!');
+              callData()
+            } else {
+              alert('Xóa thất bại');
+
+            }
+
+          }
+        };
+        xhr.open('DELETE', `${chapterUrl}?id=${id}`, true); // gửi đi đâu, theo cách nào.
+        xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
+        xhr.send(); // phóng xe đi. 
+      }
+    }
+
+    function deleteVolume(id) {
+      if (id === undefined || id === null) {
+        return;
+      }
+      if (confirm('Bạn chắc chán muốn xóa?')) {
+        var xhr = new XMLHttpRequest(); // gọi grab
+        // xử lý kết quả trả về.
+        xhr.onreadystatechange = function () {
+          // khi trạng thái request đã kết thúc và status là thành công.
+          if (xhr.readyState == 4) {
+            if ((xhr.status == 200 || xhr.status == 201)) {
+              alert('Xóa thành công!');
+              callData()
+            } else {
+              alert('Xóa thất bại');
+
+            }
+
+          }
+        };
+        xhr.open('DELETE', `${volumeUrl}?id=${id}`, true); // gửi đi đâu, theo cách nào.
+        xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
+        xhr.send(); // phóng xe đi. 
+      }
+    }
+
+    function getChapterDetail(chapterId, volId) {
+      openChapterPopup(volId)
+      document.getElementById("chapterModalLabel").innerText = "Chỉnh sửa";
+      callChapterDetail(chapterId)
+    }
+
+    function callChapterDetail(chapterId) {
+      var xhr = new XMLHttpRequest(); // gọi grab
+      // xử lý kết quả trả về.
+      xhr.onreadystatechange = function () {
+        // khi trạng thái request đã kết thúc và status là thành công.
+        if (xhr.readyState == 4) {
+          if ((xhr.status == 200 || xhr.status == 201)) {
+            chapterDetail = JSON.parse(xhr.responseText);
+            document.forms['chapterForm']['id'].value = chapterDetail.id
+            document.forms['chapterForm']['numberTitle'].value = chapterDetail.numberTitle
+            document.forms['chapterForm']['number'].value = chapterDetail.number
+            document.forms['chapterForm']['title'].value = chapterDetail.title
+            $('#summernote').summernote('code', chapterDetail.content)
+            $('#volumeId').val(chapterDetail.volumeId).trigger('change');
+          } else {
+            alert("Có lỗi vui lòng thử lại sau")
+          }
+        }
+      };
+      xhr.open('GET', `${chapterUrl}?id=${chapterId}`, false); // gửi đi đâu, theo cách nào.
+      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
+      xhr.send(); // phóng xe đi. 
+    }
+
+    function resetVolumeForm() {
+      var img = document.getElementById("preview-img");
+      img.classList.remove("hide");
+      img.classList.add("hide")
+      document.forms['volumeForm']['thumbnail'].value = ""
+      document.forms['volumeForm']['title'].value = ""
+      document.forms['volumeForm']['id'].value = ""
+      document.forms['volumeForm']['number'].value = listVolume.length
+      document.getElementById("btnVolumeForm").innerText = "Thêm mới";
+      document.getElementById("volumeModalLabel").innerText = "Thêm tập";
+    }
+
+    function showVolumeDetail(id) {
+      resetVolumeForm()
+      document.getElementById("btnVolumeForm").innerText = "Lưu";
+      document.getElementById("volumeModalLabel").innerText = "Chỉnh sửa";
+      var obj = listVolume.find(e => e.id == id)
+      var img = document.getElementById("preview-img");
+      img.classList.remove("hide");
+      if (obj.thumbnail) {
+        img.src = obj.thumbnail
+      } else
+        img.src = "../../dist/img/nocover.jpg"
+      document.forms['volumeForm']['thumbnail'].value = obj.thumbnail
+      document.forms['volumeForm']['title'].value = obj.title
+      document.forms['volumeForm']['id'].value = obj.id
+      document.forms['volumeForm']['number'].value = obj.number
+    }
+
+    function submitVolumeForm() {
+      var volId = document.forms['volumeForm']['id'].value
+      var title = document.forms['volumeForm']['title'].value
+      var number = document.forms['volumeForm']['number'].value
+      var thumbnail = document.forms['volumeForm']['thumbnail'].value
+      var method = "POST"
+      if (volId) {
+        method = "PUT"
+
+      }
+      var volume = {
+        "id": volId,
+        "title": title,
+        "number": number,
+        "novelId": novelId,
+        "thumbnail": thumbnail
+      }
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200 || xhr.status == 201) {
+            alert("Thành công!")
+            callData()
+          } else {
+            alert("Thất bại")
+          }
+          $('#volumeModal').modal('hide')
+        }
+
+      }
+      xhr.open(method, volumeUrl, false);
+      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`);
+      xhr.setRequestHeader('Content-type', "application/json");
+      xhr.send(JSON.stringify(volume));
+    }
+
+
+    function callData() {
+      var xhr = new XMLHttpRequest(); // gọi grab
+      // xử lý kết quả trả về.
+      xhr.onreadystatechange = function () {
+        // khi trạng thái request đã kết thúc và status là thành công.
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          // console.log(xhr.responseText); // dữ liệu định dạng chuỗi có format kiểu json.
+          var data = JSON.parse(xhr.responseText); // chuyển từ chuỗi sang object json.
+          document.querySelector('#name').innerHTML = data.name
+          document.querySelector('#otherName').innerHTML = data.otherName
+          document.querySelector('#author').innerHTML = data.author
+          document.querySelector('#artist').innerHTML = data.artist
+          document.querySelector('#thumbnail').src = data.avatar
+          typesHtml = ""
+          data.types.forEach(e => {
+            typesHtml += `<span class="series-gerne-item" >${e}</span>`
+          })
+          document.querySelector('#types').innerHTML = typesHtml
+
+          document.querySelector('#typeOfStory').innerHTML = typeOfStories[data.typeOfStory]
+          document.querySelector('#summary').innerHTML = data.summary
+          var volHTML = ""
+          listVolume = data.volumes
+          data.volumes.forEach(element => {
+            volHTML += `  <section class="volume-list at-series basic-section mb-5">
+                  <header id="volume_7114" class="sect-header d-flex justify-content-between align-items-center">
+                    <span class="sect-title">
+                      ${element.title}
+                    </span>
+                    <span class="actions-title ">
+                      <a href="javascript:;" class="ml-4" onclick="showVolumeDetail('${element.id}')" data-toggle="modal" data-target="#volumeModal"><i class="fa-regular fa-pen-to-square"></i></a>
+                      <a href="javascript:;" class="ml-4" onclick="deleteVolume('${element.id}')" ><i class="fa fa-trash"></i></a>
+                    </span>
+                  </header>
+                  <main class="d-lg-block">
+                    <div class="row">
+                      <div class="col-12 col-md-3">
+                        <div class="volume-cover col-md-8 mt-3 mb-3">
+                          <div class="a6-ratio">
+                            <img
+                              src="${element.thumbnail?element.thumbnail:'../../dist/img/nocover.jpg'}"
+                              alt="">
+                          </div>
+                          </a>
+                        </div>
+                      </div>
+                   
+
+                      <div class="col-12 col-md-9">
+                        <ul class="list-chapters at-series">
+                          <li class="btn-outline-info btn w-100" onclick="openChapterPopup('${element.id}')"  data-toggle="modal" data-target="#chapterModal">
+                            Thêm chương
+                          </li>`
+            element.chapters.forEach(e => {
+              volHTML += ` <li class="d-flex justify-content-between">
+                            <div class="chapter-name">
+                              <span 
+                                title="Zeros Merlin">${e.title}</span>
+                            </div>
+                            <div class="actions">
+                              <span class="chapter-time">${new Date(e.updatedAt).toLocaleString('vi-VI')}</span>
+                              <a href="javascript:;" data-toggle="modal" data-target="#chapterModal" onclick="getChapterDetail('${e.id}','${element.id}')" class="ml-4"><i class="fa-regular fa-pen-to-square"></i></a>
+                              <a href="javascript:;" onclick="deleteChapter('${e.id}')" class="ml-4"><i class="fa fa-trash"></i></a>
+                            </div>
+                          </li>`
+            })
+
+
+            volHTML += `</ul>
+
+                      </div>
+                    </div>
+                  </main>
+                </section>`
+
+
+
+          });
+          document.querySelector('#volumeList').innerHTML = volHTML
+
+
+        }
+      };
+      xhr.open('GET', detailUrl, false);
+      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`);
+      xhr.setRequestHeader('Content-type', "application/json");
+      xhr.send();
+    }
+
+    // chờ document load đầy đủ, dựng cây DOM.
+    // cloundinary 
+    var myWidget = cloudinary.createUploadWidget({
+      cloudName: 'thanhbc',
+      uploadPreset: 'ysy8ba1q'
+    }, (error, result) => {
+      if (!error && result && result.event === "success") {
+        var img = document.getElementById("preview-img");
+        img.classList.remove("hide");
+        img.src = result.info.secure_url
+        document.forms['volumeForm']['thumbnail'].value = result.info.secure_url
+      }
+    })
+    document.getElementById("upload_widget").addEventListener("click", function () {
+      myWidget.open();
+    }, false);
+
+  </script>
+  <script src="../../plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- overlayScrollbars -->
+  <!-- <script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
+  <!-- AdminLTE App -->
+  <script src="../../dist/js/adminlte.js"></script>
+  <!-- Select2 -->
+  <script src="../../plugins/select2/js/select2.full.min.js"></script>
+  <!-- PAGE PLUGINS -->
+  <!-- jQuery Mapael -->
+  <script src="../../plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="../../plugins/raphael/raphael.min.js"></script>
+  <script src="../../plugins/jquery-mapael/jquery.mapael.min.js"></script>
+  <script src="../../plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <!-- ChartJS -->
+  <script src="../../plugins/chart.js/Chart.min.js"></script>
+  <!-- Summernote -->
+  <script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="../../dist/js/isLogin.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <!-- Cloundinary -->
+  <!-- Select2 -->
+  <script src="../../plugins/select2/js/select2.full.min.js"></script>
+
+</body>
+
+</html>
