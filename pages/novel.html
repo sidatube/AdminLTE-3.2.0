@@ -434,6 +434,7 @@
       "COMPOSED": "Sáng tác"
     }
     document.addEventListener('DOMContentLoaded', function () {
+      $('.select2').select2()
       callData() // note call api viết ra hàm riêng rồi vứt tên hàm vào đây
       initDropdownlist()
       $('#typeOfStories').select2({
@@ -579,10 +580,7 @@
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <!-- <script src="../dist/js/pages/dashboard2.js"></script> -->
   <script>
-    $(function () {
-      $('.select2').select2()
-    });
-
+   
   </script>
 </body>
 
