@@ -209,29 +209,15 @@
             <form action="javascript:;" id="addUser" name="addUser" class="col-md-11 mx-auto needs-validation"
               novalidate>
               <div class="form-group">
-                <label for="usernameAddUser">Username:</label>
-                <input id="username" name="username" id="usernameAddUser" class="form-control" placeholder="Username "
+                <input type="hidden" name="id">
+                <label for="usernameAddUser">Tên họa sĩ:</label>
+                <input name="name" id="usernameAddUser" class="form-control" placeholder="Tên họa sĩ "
                   required>
                 <div class="invalid-feedback">
-                  Tiêu đề tập không được bỏ trống!
+                  Tên họa sĩ không được bỏ trống!
                 </div>
               </div>
-              <div class="form-group">
-                <label for="emailAddUser">Email:</label>
-                <input id="email" name="email" type="email" id="emailAddUser" class="form-control" placeholder="Email"
-                  required>
-                <div class="invalid-feedback">
-                  Email không đúng định dạng
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="passAddUser">Mật khẩu:</label>
-                <input id="password" type="password" id="passAddUser" name="password" class="form-control"
-                  placeholder="Mật khẩu " required>
-                <div class="invalid-feedback">
-                  Mật khẩu không được bỏ trống!
-                </div>
-              </div>
+             
             </form>
           </div>
           <div class="modal-footer">
@@ -242,113 +228,6 @@
       </div>
     </div>
     <!-- End addModal -->
-    <!-- 2Modal -->
-    <div class="modal fade" id="editModal" aria-hidden="true" aria-labelledby="editModalLabel" tabindex="-1">
-      <div class="modal-dialog  modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="editModalLabel">Chỉnh sửa</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-
-            <form action="javascript:;" name="editUser" id="editUser" class="row needs-validation col-md-11 mx-auto"
-              novalidate>
-              <div class="col-12 col-md-5 d-flex flex-column align-items-center">
-                <div>
-                  <img class="mx-auto col-md-10 rounded-circle " id="preview-img" src="../dist/img/default-avatar.png"
-                    alt="">
-                </div>
-                <input class="form-control" type="hidden" id="avatar" name="avatar">
-
-                <div class="mx-auto col-md-10 ">
-                  <button type="button" id="upload_widget" class="mx-auto mt-3 btn btn-outline-light">Chọn ảnh đại
-                    diện</button>
-                </div>
-
-              </div>
-              <div class="col-12 col-md-7">
-                <div class="form-group">
-                  <label for="usernameEdit">Username:</label>
-                  <input name="username" class="form-control" disabled id="usernameEdit" placeholder="Username ">
-                </div>
-                <div class="form-group">
-                  <label for="emailEdit">Email:</label>
-                  <input name="email" class="form-control" id="emailEdit" placeholder="Email " required>
-                  <div class="invalid-feedback">
-                    Email không đúng định dạng
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="nameEdit">Biệt danh:</label>
-                  <input name="name" class="form-control" id="nameEdit" placeholder="Biệt danh " required>
-                  <div class="invalid-feedback">
-                    Không được bỏ trống Biệt danh!
-                  </div>
-                </div>
-                <div class="form-group">
-                  <button class="btn btn-outline-info" type="button" onclick="refreshResetData()"
-                    data-bs-target="#changePasswordModal" data-bs-toggle="modal">Đặt mật khẩu mới</button>
-                </div>
-                <div class="form-group">
-                  <label for="rolesEdit">Vai trò:</label>
-                  <select id="rolesEdit" class="select2" multiple="multiple" style="width:100%" required>
-
-                  </select>
-                  <div class="invalid-feedback">
-                    Không được bỏ trống vai trò!
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-            <button type="submit" form="editUser" onclick="checkClose('edit')" class="btn btn-info">Lưu</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="changePasswordModal" aria-hidden="true" aria-labelledby="changePasswordModalLabel"
-      tabindex="-1">
-      <div class="modal-dialog ">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="changePasswordModalLabel">Đặt mật khẩu mới</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form action="javascript:;" id="resetPass" name="resetPass" class="row needs-validation col-md-11 mx-auto"
-              novalidate oninput='checkConfirm()'>
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="newPassword">Mật khẩu mới:</label>
-                  <input name="newPassword" class="form-control" type="password" id="newPassword"
-                    placeholder="Mật khẩu mới " required>
-                  <div class="invalid-feedback">
-                    Không được để trống mật khẩu
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="confirmPassword">Nhập lại mật khẩu mới:</label>
-                  <input name="confirmPassword" class="form-control" type="password" id="confirmPassword"
-                    placeholder="Nhập lại mật khẩu mới " required>
-                  <div class="invalid-feedback">
-                    Mật khẩu không giống nhau
-                  </div>
-                </div>
-              </div>
-
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-primary" data-bs-target="#editModal" data-bs-toggle="modal">Quay lại</button>
-            <button type="submit" form="resetPass" onclick="checkClose('pass')" class="btn btn-info">Lưu</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end 2Modal -->
     <!-- note dùng code này -->
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -356,7 +235,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Danh sách người dùng </h1>
+              <h1 class="m-0">Danh sách họa sĩ </h1>
             </div><!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -366,35 +245,14 @@
           <div class="card-header">
             <form name="searchForm" action="javascript:;" class="row">
               <div class="form-group col-md-2">
-                <label for="username">Username:</label>
-                <input class="form-control" name="username" placeholder="Username">
-              </div>
-              <div class="form-group col-md-2">
-                <label for="name">Biệt danh:</label>
-                <input class="form-control" name="name" placeholder="Biệt danh">
-              </div>
-              <div class="form-group col-md-2">
-                <label for="email">Email:</label>
-                <input class="form-control" name="email" placeholder="Email">
-              </div>
-
-              <div class="col-md-2">
-                <label for="roles">Vai trò:</label>
-                <select id="roles" multiple="multiple" class="select2" style="width:100%">
-                  <option value="admin">Admin</option>
-                  <option value="mod">Mod</option>
-                  <option value="user">User</option>
-                </select>
+                <label for="name">Tên họa sĩ:</label>
+                <input class="form-control" name="name" placeholder="Tên họa sĩ">
               </div>
               <div class="col-md-2">
                 <label for="orderBy">Sắp xếp:</label>
                 <select id="orderBy" class="select2" style="width:100%">
-                  <option selected value="username">Username theo bảng chữ cái </option>
-                  <option value="usernameDesc">Username ngược bảng chữ cái</option>
-                  <option value="name">Biệt danh theo bảng chữ cái</option>
-                  <option value="nameDesc">Biệt danh ngược bảng chữ cái</option>
-                  <option value="email">Email theo bảng chữ cái</option>
-                  <option value="emailDesc">Email ngược bảng chữ cái</option>
+                  <option selected value="name">Tên theo bảng chữ cái</option>
+                  <option value="nameDesc">Tên ngược bảng chữ cái</option>
                   <option value="createdAt">Ngày tạo từ bé đến lớn</option>
                   <option value="createdAtDesc">Ngày tạo từ lớn đến bé</option>
                 </select>
@@ -415,11 +273,8 @@
             <thead>
               <tr>
                 <th style="width: 5%">#</th>
-                <th style="width: 10%">Ảnh đại diện</th>
-                <th style="width: 15%">Username</th>
-                <th>Biệt danh</th>
-                <th>Email</th>
-                <th>Vai trò </th>
+                <th>Tên họa sĩ</th>
+                <th>Số tác phẩm</th>
                 <th style="width: 20%">Ngày tạo</th>
                 <th style="width: 10%">
                   <div class="col-md-3 mx-auto">
@@ -528,39 +383,11 @@
       "index": 1,
       "size": 10
     }
-    const roles = {
-      "TRANSLATION": "Truyện dịch",
-      "CONVERT": "Máy dịch",
-      "COMPOSED": "Sáng tác"
-    }
+
 
     document.addEventListener('DOMContentLoaded', function () {
       $('.select2').select2()
-
-      callData() // note call api viết ra hàm riêng rồi vứt Biệt danh hàm vào đây
-      $('#roles').select2({
-        placeholder: "Chọn vai trò"
-      });
-      data = [{
-          "id": "admin",
-          "text": "Admin"
-        },
-        {
-          "id": "mod",
-          "text": "Mod"
-        },
-        {
-          "id": "user",
-          "text": "User"
-        }
-      ]
-      if (!isAdmin()) {
-        data.shift()
-      }
-      $('#rolesEdit').select2({
-        data: data,
-        placeholder: "Chọn vai trò"
-      });
+      callData()
     })
 
     function checkClose(str) {
@@ -568,120 +395,56 @@
         if (!canClose) {
           return
         }
-        if (str === 'add') {
-          register()
-        } else if (str === 'edit') {
-          editUser()
-        } else {
-          resetPass()
-        }
+        saveAuthor()
       }, 500)
     }
-
-    function resetPass() {
-      var resetPass = {
-        "username": userDetail.username,
-        "password": document.forms['resetPass']['newPassword'].value,
-        "repeatPassword": document.forms['resetPass']['confirmPassword'].value
+ 
+    function saveAuthor() {
+      var dto = {
+        "id":document.forms['addUser']['id'].value,
+        "name": document.forms['addUser']['name'].value
+      }
+      var url = `${baseUrl}/artist/create`
+      var method="POST"
+      if(dto.id){
+        method="PUT"
+      var url = `${baseUrl}/artist/update`
       }
       xhr = new XMLHttpRequest();
       xhr.onreadystatechange = () => {
         if (xhr.readyState == 4) {
           if (xhr.status == 200) {
-            alert("Lưu thành công!")
+            alert("Thao tác thành công!")
             callData()
           } else
-            alert("Lưu thất bại")
+            alert("Thao tác thất bại")
+          $('#addModal').modal('hide')
         }
       }
-      xhr.open("PUT", `${baseUrl}/account/adminChangePassword`, false);
+      xhr.open(method, url, false);
       xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`);
       xhr.setRequestHeader('Content-type', "application/json");
-      xhr.send(JSON.stringify(resetPass));
-    }
-
-    function refreshResetData() {
-      document.forms['resetPass']['newPassword'].value = '';
-      document.forms['resetPass']['confirmPassword'].value = "";
-    }
-
-    function editUser() {
-      userDetail.username = document.forms['editUser']['username'].value;
-      userDetail.name = document.forms['editUser']['name'].value;
-      userDetail.email = document.forms['editUser']['email'].value;
-      userDetail.avatar = document.forms['editUser']['avatar'].value;
-      userDetail.roles = $('#rolesEdit').val();
-      xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = () => {
-        if (xhr.readyState == 4) {
-          if (xhr.status == 200) {
-            alert("Lưu thành công!")
-            callData()
-          } else
-            alert("Lưu thất bại")
-          $('#editModal').modal('hide')
-        }
-      }
-      xhr.open("PUT", `${baseUrl}/account/adminChangeInfo`, false);
-      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`);
-      xhr.setRequestHeader('Content-type', "application/json");
-      xhr.send(JSON.stringify(userDetail));
+      xhr.send(JSON.stringify(dto));
     }
 
     function openEdit(id) {
       userDetail = listUser.find(e =>
         e.id === id
       )
-      var img = document.getElementById("preview-img");
-      img.src = userDetail.avatar ? userDetail.avatar : "../dist/img/default-avatar.png"
-      document.forms['editUser']['username'].value = userDetail.username;
-      document.forms['editUser']['name'].value = userDetail.name;
-      document.forms['editUser']['email'].value = userDetail.email;
-      document.forms['editUser']['avatar'].value = userDetail.avatar;
-      $('#rolesEdit').val(userDetail.roles).trigger('change');
-    }
-
-    function register() {
-      var dto = {
-        "username": document.forms['addUser']['username'].value,
-        "email": document.forms['addUser']['email'].value,
-        "password": document.forms['addUser']['password'].value,
-      }
-      xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = () => {
-        if (xhr.readyState == 4) {
-          if (xhr.status == 200) {
-            alert("Tạo thành công!")
-            callData()
-          } else
-            alert("Tạo thất bại")
-          $('#addModal').modal('hide')
-        }
-      }
-      xhr.open("POST", `${baseUrl}/register`, false);
-      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`);
-      xhr.setRequestHeader('Content-type', "application/json");
-      xhr.send(JSON.stringify(dto));
-    }
-
-    function checkConfirm() {
-      confirmPassword.setCustomValidity(confirmPassword.value === newPassword.value ? '' : "false")
+      document.forms['addUser']['name'].value = userDetail.name;
+      document.forms['addUser']['id'].value = userDetail.id;
     }
 
     function resetAddModal() {
-      document.forms['addUser']['username'].value = ''
-      document.forms['addUser']['email'].value = ''
-      document.forms['addUser']['password'].value = ''
+      document.forms['addUser']['name'].value = ''
     }
 
     function search() {
-      obj.username = document.forms['searchForm']['username'].value
       obj.name = document.forms['searchForm']['name'].value
-      obj.email = document.forms['searchForm']['email'].value
-      obj.roles = $("#roles").val()
       obj.sortBy = $("#orderBy").val()
       obj.index = 1
       callData()
+
     }
 
     function callData() {
@@ -701,16 +464,12 @@
             html += `<tr>
                             
             <td>${index + 1}</td>
-            <td>
-<img src="${element.avatar?element.avatar:"../dist/img/default-avatar.png"}" alt="user-avatar" class="img-circle img-fluid">
-</td>
-            <td>${element.username}</td>
+       
             <td>${element.name}</td>
-            <td>${element.email}</td>
-            <td class="text-capitalize">${element.roles.join(", ")}</td>  
-            <td >${new Date(element.createAt).toLocaleString('vi-VI')}</td>
+            <td>${element.novelCount}</td>
+            <td >${new Date(element.createdAt).toLocaleString('vi-VI')}</td>
                                         <td class="d-flex justify-content-center ">
-                                            <a data-bs-toggle="modal" href="#editModal" onclick="openEdit('${element.id}')"  class="ml-4"><i class="fa-regular fa-pen-to-square"></i></a>
+                                            <a data-bs-toggle="modal" href="#addModal" onclick="openEdit('${element.id}')"  class="ml-4"><i class="fa-regular fa-pen-to-square"></i></a>
                                             <a href="javascript:void(0)" class="ml-4"><i class="fa fa-trash" onclick="deleteProduct('${element.id}')"></i></a>
                                         </td>
                                     </tr>`;
@@ -718,12 +477,11 @@
           tableTag.innerHTML = html
         }
       };
-      xhr.open('POST', `${baseUrl}/account`, false); // gửi đi đâu, theo cách nào.
+      xhr.open('POST', `${baseUrl}/artist`, false); // gửi đi đâu, theo cách nào.
       xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
       xhr.setRequestHeader('Content-type', "application/json")
       xhr.send(JSON.stringify(obj)); // phóng xe đi.   
     }
-
     function deleteProduct(id) {
       if (id === undefined || id === null) {
         return;
@@ -743,7 +501,7 @@
 
           }
         };
-        xhr.open('DELETE', `${baseUrl}/account/adminDelete?id=${id}`, true); // gửi đi đâu, theo cách nào.
+        xhr.open('DELETE', `${baseUrl}/artist/delete?id=${id}`, true); // gửi đi đâu, theo cách nào.
         xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
         xhr.send(null); // phóng xe đi. 
       }
@@ -763,39 +521,6 @@
       }
     };
 
-
-    var myWidget = cloudinary.createUploadWidget({
-        cloudName: 'thanhbc',
-        uploadPreset: 'ysy8ba1q',
-        cropping: true //add a cropping step
-        // showAdvancedOptions: true,  //add advanced options (public_id and tag)
-        // sources: [ "local", "url"], // restrict the upload sources to URL and local files
-        // multiple: false,  //restrict upload to a single file
-        // folder: "user_images", //upload files to the specified folder
-        // tags: ["users", "profile"], //add the given tags to the uploaded files
-        // context: {alt: "user_uploaded"}, //add the given context data to the uploaded files
-        // clientAllowedFormats: ["images"], //restrict uploading to image files only
-        // maxImageFileSize: 2000000,  //restrict file size to less than 2MB
-        // maxImageWidth: 2000, //Scales the image down to a width of 2000 pixels before uploading
-        // theme: "purple", //change to a purple theme
-      },
-      (error, result) => {
-        if (!error && result && result.event === "success") {
-          console.log("Done! Here is the image info: ", result.info);
-          var img = document.getElementById("preview-img");
-          img.src = result.info.secure_url
-          document.forms['editUser']['avatar'].value = result.info.secure_url
-        }
-      }
-    );
-
-    document.getElementById("upload_widget").addEventListener(
-      "click",
-      function () {
-        myWidget.open();
-      },
-      false
-    );
     //note
 
   </script>

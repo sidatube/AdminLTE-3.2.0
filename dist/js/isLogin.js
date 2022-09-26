@@ -15,7 +15,7 @@ isLogin()
 
 document.addEventListener('DOMContentLoaded', function() {
     var path = window.location.pathname
-    console.log(path,"path")
+    console.log(path, "path")
     var admin = JSON.parse(localStorage.getItem("admin"))
     document.querySelector('.main-sidebar.sidebar-dark-primary.elevation-4').innerHTML =
         ` 
@@ -88,17 +88,16 @@ document.addEventListener('DOMContentLoaded', function() {
                  <ul class="nav nav-treeview">
                    <li class="nav-item">
                      <a href="${window.location.origin}/pages/novel.html" class="nav-link ${path.includes("/novel.html")?'active':''}">
+                     <i class="fa-solid fa-table-list nav-icon"></i>
 
-                       <i class="far fa-circle nav-icon"></i>
-
-                       <p>Danh sách</p>
+                       <p>Danh sách truyện</p>
                      </a>
                    </li>
                    <li class="nav-item">
                      <a href="${window.location.origin}/pages/novel/index-novel.html" class="nav-link ${path.includes("/index-novel.html")?'active':''}">
-                       <i class="far fa-circle nav-icon"></i>
+                     <i class="nav-icon fa-solid fa-feather"></i></i>
                        <p>
-                         Tạo mới
+                         Thêm truyện
                        </p>
                      </a>
 
@@ -107,13 +106,23 @@ document.addEventListener('DOMContentLoaded', function() {
                  </ul>
                </li>
                <li class="nav-item">
-                 <a href="${window.location.origin}/pages/types.html" class="nav-link ${path.includes("/types.html")?'active':''}">
-                   <i class="nav-icon fa-solid fa-list"></i>
-                   <p>Thể loại</p>
+                 <a href="${window.location.origin}/pages/author.html" class="nav-link ${path.includes("/author.html")?'active':''}">
+                 <i class="fa-solid fa-pen-nib nav-icon"></i>
+                   <p>Tác giả</p>
                  </a>
                </li>
-
-
+               <li class="nav-item">
+               <a href="${window.location.origin}/pages/artist.html" class="nav-link ${path.includes("/artist.html")?'active':''}">
+               <i class="fa-solid fa-palette nav-icon"></i>
+                 <p>Họa sĩ</p>
+               </a>
+             </li>
+             <li class="nav-item">
+             <a href="${window.location.origin}/pages/types.html" class="nav-link ${path.includes("/types.html")?'active':''}">
+               <i class="nav-icon fa-solid fa-list"></i>
+               <p>Thể loại</p>
+             </a>
+           </li>
                <li class="nav-item ">
                  <a href="javascript:;" class="nav-link logout">
                    <i class="nav-icon fa-solid fa-right-from-bracket"></i>
@@ -143,9 +152,9 @@ document.addEventListener('DOMContentLoaded', function() {
      <div class="os-scrollbar-corner"></div>
    </div>
    <!-- /.sidebar -->
-`   
- document.querySelector('.main-header.navbar.navbar-expand.navbar-dark').innerHTML =
- `<ul class="navbar-nav">
+`
+    document.querySelector('.main-header.navbar.navbar-expand.navbar-dark').innerHTML =
+        `<ul class="navbar-nav">
  <li class="nav-item">
    <a class="nav-link" data-widget="pushmenu" href="../#" role="button"><i class="fas fa-bars"></i></a>
  </li>

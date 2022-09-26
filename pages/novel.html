@@ -296,7 +296,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">List truyện </h1>
+              <h1 class="m-0">Danh sách truyện </h1>
             </div><!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -311,11 +311,13 @@
               </div>
               <div class="form-group col-md-2">
                 <label for="authorName">Tên tác giả:</label>
-                <input class="form-control" id="authorName" name="authorName"  placeholder="Tên tác giả">
+                <select id="authorSelect" class="select2 author-select" style="width:100%">
+                </select>
               </div>
               <div class="form-group col-md-2">
                 <label for="artistName">Tên họa sĩ:</label>
-                <input class="form-control" id="artistName" name="artistName" placeholder="Tên họa sĩ">
+                <select id="artistSelect" class="select2  artist-select" style="width:100%">
+                </select>
               </div>
               <div class="col-md-2">
                 <label for="types">Thể loại:</label>
@@ -352,9 +354,12 @@
                 <th>Minh họa</th>
                 <th style="width: 20%">Thể loại</th>
                 <th style="width: 150px ;">Loại truyện</th>
-                <th> <a class="btn btn-outline-light" href="novel/index-novel.html">
-                    Thêm truyện
-                  </a></th>
+                <th>
+                  <div class="col-md-3 mx-auto">
+                    <a href="novel/index-novel.html" class="btn btn-outline-light direct-chat-img">
+                      <i class="fa-solid fa-plus"></i>
+                    </a></div>
+                </th>
               </tr>
             </thead>
             <tbody id="inner-data">
@@ -440,8 +445,75 @@
       $('#typeOfStories').select2({
         placeholder: "Chọn loại truyện"
       });
+      settingFilterSelect()
     })
 
+    function settingFilterSelect() {
+      callAllAuthor()
+      callAllArtist()
+    }
+    function callAllAuthor(){
+      var url = "https://novelread.herokuapp.com/api/v1/author";
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            let types = JSON.parse(xhr.responseText);
+            const data = []
+            for (var i = 0; i < types.length; i++) {
+              let item = types[i];
+              data.push({
+                "id": item.name,
+                "text": item.name
+              })
+            }
+            $('.author-select').select2({
+              data: data,
+              placeholder: "Tên tác giả",
+              allowClear: true
+            });
+            $('.author-select').val(null).trigger('change');
+          } else {
+            alert('Không thể load tên tác giả!');
+          }
+        }
+      }
+      xhr.open('GET', url, false);
+      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
+      xhr.setRequestHeader('Content-type', "application/json")
+      xhr.send();
+    }
+    function callAllArtist(){
+      var url = "https://novelread.herokuapp.com/api/v1/artist";
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            let types = JSON.parse(xhr.responseText);
+            const data = []
+            for (var i = 0; i < types.length; i++) {
+              let item = types[i];
+              data.push({
+                "id": item.name,
+                "text": item.name
+              })
+            }
+            $('.artist-select').select2({
+              data: data,
+              placeholder: "Tên họa sĩ",
+              allowClear: true
+            });
+            $('.artist-select').val(-1).trigger('change');
+          } else {
+            alert('Không thể load tên tác giả!');
+          }
+        }
+      }
+      xhr.open('GET', url, false);
+      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
+      xhr.setRequestHeader('Content-type', "application/json")
+      xhr.send();
+    }
     function initDropdownlist() {
       var baseUrlType = "https://novelread.herokuapp.com/api/v1/type";
       var xhr = new XMLHttpRequest();
@@ -474,8 +546,8 @@
 
     function search() {
       obj.name = document.forms['searchForm']['novelName'].value
-      obj.author = document.forms['searchForm']['authorName'].value
-      obj.artist = document.forms['searchForm']['artistName'].value
+      obj.author = $(".author-select").val()
+      obj.artist = $(".artist-select").val()
       obj.typeOfStories = $("#typeOfStories").val()
       obj.typesId = $("#types").val()
       obj.index = 1
@@ -580,7 +652,7 @@
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <!-- <script src="../dist/js/pages/dashboard2.js"></script> -->
   <script>
-   
+
   </script>
 </body>
 

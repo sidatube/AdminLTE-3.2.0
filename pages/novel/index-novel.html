@@ -373,12 +373,14 @@
                 </div>
                 <div class="form-group">
                   <label for="author">Tên tác giả:</label>
-                  <input class="form-control" id="author" name="author" placeholder="Tên tác giả">
+                  <select class="select2 author-select" multiple="multiple" style="width:100%">
+                  </select>
 
                 </div>
                 <div class="form-group">
                   <label for="artist">Tên họa sĩ:</label>
-                  <input class="form-control" id="artist" name="artist" placeholder="Tên họa sĩ">
+                  <select class="select2 artist-select" multiple="multiple" style="width:100%">
+                  </select>
                 </div>
                 <div class="form-group">
                   <label for="types">Thể loại:</label>
@@ -396,7 +398,7 @@
               </div>
               <div class="col-md-10 mx-auto mt-3">
                 <div class="form-group">
-                  <label for="summernote">Nội dung chương:</label>
+                  <label for="summernote">Giới thiệu:</label>
                   <textarea id="summernote">
                       </textarea>
                 </div>
@@ -497,9 +499,96 @@
         maxHeight: 600,
         code: "<p><br></p>"
       })
-
+      settingFilterSelect()
 
     });
+
+    function settingFilterSelect() {
+      callAllAuthor()
+      callAllArtist()
+    }
+
+    function callAllAuthor() {
+      var url = "https://novelread.herokuapp.com/api/v1/author";
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            let types = JSON.parse(xhr.responseText);
+            const data = []
+            for (var i = 0; i < types.length; i++) {
+              let item = types[i];
+              data.push({
+                "id": item.name,
+                "text": item.name
+              })
+            }
+            $('.author-select').select2({
+              data: data,
+              placeholder: "Tên tác giả",
+              allowClear: true,
+              language: {
+                noResults: function () {
+                  return "<a href='../author.html' >Tới thhêm tác giả</a>";
+                }
+              },
+              escapeMarkup: function (markup) {
+                return markup;
+              }
+            });
+            $('.author-select').val(null).trigger('change');
+          } else {
+            alert('Không thể load tên tác giả!');
+          }
+        }
+      }
+      xhr.open('GET', url, false);
+      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
+      xhr.setRequestHeader('Content-type', "application/json")
+      xhr.send();
+    }
+
+    function callAllArtist() {
+      var url = "https://novelread.herokuapp.com/api/v1/artist";
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            let types = JSON.parse(xhr.responseText);
+            const data = []
+            for (var i = 0; i < types.length; i++) {
+              let item = types[i];
+              data.push({
+                "id": item.name,
+                "text": item.name
+              })
+            }
+            $('.artist-select').select2({
+              data: data,
+              placeholder: "Tên họa sĩ",
+              allowClear: true,
+              language: {
+                noResults: function () {
+                  return "<a href='../artist.html' >Tới thêm họa sĩ</a>";
+                }
+              },
+              escapeMarkup: function (markup) {
+                return markup;
+              }
+            });
+            $('.artist-select').val(-1).trigger('change');
+          } else {
+            alert('Không thể load tên tác giả!');
+          }
+        }
+      }
+      xhr.open('GET', url, false);
+      xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
+      xhr.setRequestHeader('Content-type', "application/json")
+      xhr.send();
+    }
+
+
 
     function saveNovel() {
       var method = 'POST';
@@ -507,8 +596,8 @@
       var id = document.forms['novelInfo']['novelId'].value;
       // lấy thông tin input
       var inputName = document.forms['novelInfo']['name'];
-      var inputAuthor = document.forms['novelInfo']['author'];
-      var inputArtist = document.forms['novelInfo']['artist'];
+      var inputAuthor = $('.author-select').select2('val')
+      var inputArtist = $('.artist-select').select2('val')
       var inputAvatar = document.forms['novelInfo']['avatar'];
       var inputTypeOfStories = document.forms['novelInfo']['typeOfStories'];
       var inputTypes = $('#types').select2('val');
