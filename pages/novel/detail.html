@@ -873,7 +873,7 @@
           document.querySelector('#otherName').innerHTML = data.otherName
           document.querySelector('#author').innerHTML = data.author
           document.querySelector('#artist').innerHTML = data.artist
-          document.querySelector('#thumbnail').src = data.avatar
+          document.querySelector('#thumbnail').src = data.avatar?data.avatar:"../../dist/img/nocover.jpg"
           typesHtml = ""
           data.types.forEach(e => {
             typesHtml += `<span class="series-gerne-item" >${e}</span>`
