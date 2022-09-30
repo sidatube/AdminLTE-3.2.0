@@ -675,11 +675,13 @@
             productDetail = JSON.parse(xhr.responseText);
             document.forms['novelInfo']['novelId'].value = productDetail.id;
             document.forms['novelInfo']['name'].value = productDetail.name;
-            document.forms['novelInfo']['author'].value = productDetail.author;
-            document.forms['novelInfo']['artist'].value = productDetail.artist;
             document.forms['novelInfo']['avatar'].value = productDetail.avatar;
             var img = document.getElementById("preview-img");
             img.src = productDetail.avatar
+            $('.author-select').val(productDetail.author).trigger('change');
+            $('.artist-select').val(productDetail.artist).trigger('change');
+            $('#types').val(productDetail.types).trigger('change');
+
             $('#types').val(productDetail.types).trigger('change');
             $('#summernote').summernote('code', productDetail.summary)
             $('#typeOfStories').val(productDetail.typeOfStory).trigger('change');
