@@ -570,15 +570,15 @@
             html += `<tr>
                             
             <td>${index + 1}</td>
-            <td><img width="180px" src="${element.avatar}"/></td>
+            <td><img width="180px" src="${element.avatar?element.avatar:"../dist/img/nocover.jpg"}"/></td>
             <td>${element.name}</td>
             <td>${element.author}</td>
             <td>${element.artist}</td>
             <td>${element.types.join(", ")}</td>  
             <td >${typeOfStories[element.typeOfStory]}</td>
                                         <td class="d-flex justify-content-center ">
-                                            <a href="novel/index-novel.html?id=${element.id}" class="ml-4"><i class="fa-regular fa-pen-to-square"></i></a>
-                                            <a href="novel/detail.html?id=${element.id}" class="ml-4"><i class="fa fa-info-circle"></i></a>
+                                            <a href="novel/index-novel?id=${element.id}" class="ml-4"><i class="fa-regular fa-pen-to-square"></i></a>
+                                            <a href="novel/detail?id=${element.id}" class="ml-4"><i class="fa fa-info-circle"></i></a>
                                             <a href="javascript:void(0)" class="ml-4"><i class="fa fa-trash" onclick="deleteProduct('${element.id}')"></i></a>
                                         </td>
                                     </tr>`;
