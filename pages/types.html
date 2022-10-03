@@ -494,6 +494,7 @@
   <script src="../plugins/jquery-mapael/maps/usa_states.min.js"></script>
   <!-- ChartJS -->
   <script src="../plugins/chart.js/Chart.min.js"></script>
+  <script src="../dist/js/contants.js"></script>
 
   <!-- AdminLTE for demo purposes -->
   <script src="../dist/js/demo.js"></script>
@@ -530,7 +531,7 @@
       $('.select2').select2()
     });
     // chờ cây DOM được dựng thành công thì mới xử lý tiếp. 
-    var baseUrl = "https://novelread.herokuapp.com/api/v1"
+    var baseUrl = `${UrlUsing}/api/v1`
     var obj = {
       "name": "",
       "index": 1,

@@ -363,8 +363,9 @@
   </div>
   <!-- ./wrapper -->
   <script src="../../dist/js/pagination.js"></script>
+  <script src="dist/js/contants.js"></script>
   <script>
-    const baseUrl = "https://novelread.herokuapp.com/api/v1"
+    const baseUrl = `${UrlUsing}/api/v1`
 
     var donateFilter = {
       "month": new Date().getMonth() + 1,
@@ -554,7 +555,8 @@
   <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
   <script src="plugins/raphael/raphael.min.js"></script>
   <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
-  <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script> 
+
   <!-- ChartJS -->
   <script src="plugins/chart.js/Chart.min.js"></script>
 

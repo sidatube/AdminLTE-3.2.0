@@ -416,11 +416,13 @@
   </div>
   <!-- ./wrapper -->
   <script src="../dist/js/pagination.js"></script>
+  <script src="../dist/js/contants.js"></script>
+
   <!-- note thêm js pagination -->
   <!-- REQUIRED SCRIPTS -->
   <script>
     // chờ cây DOM được dựng thành công thì mới xử lý tiếp. 
-    var baseUrl = "https://novelread.herokuapp.com/api/v1"
+    var baseUrl = `${UrlUsing}/api/v1`
     // var baseUrl = "http://localhost:8080/api/v1"
     // note chuyển vị trí obj ra ngoài 
     const obj = {
@@ -453,7 +455,7 @@
       callAllArtist()
     }
     function callAllAuthor(){
-      var url = "https://novelread.herokuapp.com/api/v1/author";
+      var url = `${UrlUsing}/api/v1/author`;
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
@@ -484,7 +486,7 @@
       xhr.send();
     }
     function callAllArtist(){
-      var url = "https://novelread.herokuapp.com/api/v1/artist";
+      var url = `${UrlUsing}/api/v1/artist`;
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
@@ -515,7 +517,7 @@
       xhr.send();
     }
     function initDropdownlist() {
-      var baseUrlType = "https://novelread.herokuapp.com/api/v1/type";
+      var baseUrlType = `${UrlUsing}/api/v1/type`;
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
@@ -577,8 +579,8 @@
             <td>${element.types.join(", ")}</td>  
             <td >${typeOfStories[element.typeOfStory]}</td>
                                         <td class="d-flex justify-content-center ">
-                                            <a href="novel/index-novel?id=${element.id}" class="ml-4"><i class="fa-regular fa-pen-to-square"></i></a>
-                                            <a href="novel/detail?id=${element.id}" class="ml-4"><i class="fa fa-info-circle"></i></a>
+                                            <a href="novel/index-novel.html?id=${element.id}" class="ml-4"><i class="fa-regular fa-pen-to-square"></i></a>
+                                            <a href="novel/detail.html?id=${element.id}" class="ml-4"><i class="fa fa-info-circle"></i></a>
                                             <a href="javascript:void(0)" class="ml-4"><i class="fa fa-trash" onclick="deleteProduct('${element.id}')"></i></a>
                                         </td>
                                     </tr>`;

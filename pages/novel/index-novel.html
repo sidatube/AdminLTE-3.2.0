@@ -443,6 +443,8 @@
   <!-- REQUIRED SCRIPTS -->
   <!-- jQuery -->
   <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+  <script src="../../dist/js/contants.js"></script>
+
   <!-- Summernote -->
   <script>
     (function () {
@@ -479,14 +481,15 @@
     var listTypes = []
     var listTypeOfStories = "TRANSLATION"
     // chờ document load đầy đủ, dựng cây DOM.
-    var baseUrlCreate = "https://novelread.herokuapp.com/api/v1/novel/create"
-    var baseUrlUpdate = "https://novelread.herokuapp.com/api/v1/novel/update"
+    var baseUrlCreate = `${UrlUsing}/api/v1/novel/create`
+    var baseUrlUpdate = `${UrlUsing}/api/v1/novel/update`
     document.addEventListener('DOMContentLoaded', function () {
       const urlParams = new URLSearchParams(window.location.search);
       const id = urlParams.get('id');
 
       initDropdownlist()
       settingSelect()
+      settingFilterSelect()
       settingSelectTypeofStory()
       if (id) {
         document.getElementById('titelEdit').innerText = "Chỉnh sửa"
@@ -499,7 +502,6 @@
         maxHeight: 600,
         code: "<p><br></p>"
       })
-      settingFilterSelect()
 
     });
 
@@ -509,7 +511,7 @@
     }
 
     function callAllAuthor() {
-      var url = "https://novelread.herokuapp.com/api/v1/author";
+      var url = `${UrlUsing}/api/v1/author`;
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
@@ -549,7 +551,7 @@
     }
 
     function callAllArtist() {
-      var url = "https://novelread.herokuapp.com/api/v1/artist";
+      var url = `${UrlUsing}/api/v1/artist`;
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
@@ -604,8 +606,8 @@
       var summary = $('#summernote').summernote('code')
       objectToSend = {
         'name': inputName.value,
-        'author': inputAuthor.value,
-        'artist': inputArtist.value,
+        'author': inputAuthor,
+        'artist': inputArtist,
         'avatar': inputAvatar.value,
         'typeOfStory': listTypeOfStories,
         'types': listTypes,
@@ -618,26 +620,28 @@
         method = 'PUT';
         url = baseUrlUpdate
         productDetail.name = inputName.value;
-        productDetail.author = inputAuthor.value;
-        productDetail.artist = inputArtist.value;
+        productDetail.author = inputAuthor;
+        productDetail.artist = inputArtist;
         productDetail.avatar = inputAvatar.value;
         productDetail.typeOfStory = listTypeOfStories;
         productDetail.types = listTypes;
         productDetail.summary = summary
         data = JSON.stringify(productDetail)
+      console.log(productDetail,"data")
+
       }
+      console.log(objectToSend,"OBJ")
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
           if (xhr.status === 201 || xhr.status === 200) {
             alert('Thao tác thành công');
-            window.location.href = ''; // đưa về trang danh sách sản phẩm.
+            window.location.pathname = 'pages/novel.html'; // đưa về trang danh sách sản phẩm.
           } else {
             alert('Thao tác thất bại');
           }
         }
       }
-      console.log(objectToSend)
       xhr.open(method, url, false);
       xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`);
@@ -666,7 +670,7 @@
     };
 
     function loadProductDetail(id) {
-      var getProductDetailUrl = `https://novelread.herokuapp.com/api/v1/novel/detailAdmin?id=${id}`
+      var getProductDetailUrl = `${UrlUsing}/api/v1/novel/detailAdmin?id=${id}`
 
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
@@ -677,7 +681,8 @@
             document.forms['novelInfo']['name'].value = productDetail.name;
             document.forms['novelInfo']['avatar'].value = productDetail.avatar;
             var img = document.getElementById("preview-img");
-            img.src = productDetail.avatar
+            
+            img.src = productDetail.avatar?productDetail.avatar:"../../dist/img/nocover.jpg"
             $('.author-select').val(productDetail.author).trigger('change');
             $('.artist-select').val(productDetail.artist).trigger('change');
             $('#types').val(productDetail.types).trigger('change');
@@ -701,7 +706,7 @@
     var selectTag = document.querySelector('#types');
 
     function initDropdownlist() {
-      var baseUrlType = "https://novelread.herokuapp.com/api/v1/type";
+      var baseUrlType = `${UrlUsing}/api/v1/type`;
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
@@ -758,6 +763,7 @@
   <script src="../../plugins/jquery-mapael/maps/usa_states.min.js"></script>
   <!-- ChartJS -->
   <script src="../../plugins/chart.js/Chart.min.js"></script>
+  <script src="../../dist/js/contants.js"></script>
 
   <!-- AdminLTE for demo purposes -->
   <script src="../../dist/js/isLogin.js"></script>

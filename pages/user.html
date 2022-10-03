@@ -486,6 +486,7 @@
 
   <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
   <script src="../dist/js/pagination.js"></script>
+  <script src="../dist/js/contants.js"></script>
   <!-- note thêm js pagination -->
   <!-- REQUIRED SCRIPTS -->
   <script>
@@ -513,7 +514,7 @@
       }, false);
     })();
     // chờ cây DOM được dựng thành công thì mới xử lý tiếp. 
-    var baseUrl = "https://novelread.herokuapp.com/api/v1"
+    var baseUrl = `${UrlUsing}/api/v1`
     // var baseUrl = "http://localhost:8080/api/v1"
     // note chuyển vị trí obj ra ngoài 
     var canClose = true
@@ -812,7 +813,8 @@
   <!-- Select2 -->
   <script src="../plugins/select2/js/select2.full.min.js"></script>
   <!-- PAGE PLUGINS -->
-  <!-- jQuery Mapael -->
+  <!-- jQuery Mapael -->  
+
   <script src="../plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
   <script src="../plugins/raphael/raphael.min.js"></script>
   <script src="../plugins/jquery-mapael/jquery.mapael.min.js"></script>

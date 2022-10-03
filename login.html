@@ -31,6 +31,8 @@
     </form>
   </div>
 </body>
+<script src="dist/js/contants.js"></script>
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {})
 
@@ -59,7 +61,7 @@
 
       }
     };
-    xhttp.open("POST", "https://novelread.herokuapp.com/api/v1/login", false);
+    xhttp.open("POST", `${UrlUsing}/api/v1/login`, false);
     xhttp.setRequestHeader('Content-type', "application/json")
     xhttp.send(JSON.stringify(obj));
   }
