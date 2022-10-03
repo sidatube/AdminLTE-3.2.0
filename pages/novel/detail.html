@@ -606,7 +606,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     const novelId = urlParams.get('id');
     if (!novelId) {
-      window.location.href = "novel.html"
+      window.location.pathname = "pages/novel.html"
     }
     var detailUrl = `${UrlUsing}/api/v1/novel/detailAdmin?id=${novelId}`;
     var volumeUrl = `${UrlUsing}/api/v1/novel/volume`
