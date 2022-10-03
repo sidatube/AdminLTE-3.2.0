@@ -574,8 +574,8 @@
             <td>${index + 1}</td>
             <td><img width="180px" src="${element.avatar?element.avatar:"../dist/img/nocover.jpg"}"/></td>
             <td>${element.name}</td>
-            <td>${element.author}</td>
-            <td>${element.artist}</td>
+            <td>${element.author?element.author:""}</td>
+            <td>${element.artist?element.artist:""}</td>
             <td>${element.types.join(", ")}</td>  
             <td >${typeOfStories[element.typeOfStory]}</td>
                                         <td class="d-flex justify-content-center ">
