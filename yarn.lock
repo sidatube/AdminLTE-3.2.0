@@ -1143,10 +1143,10 @@
     remark "^13.0.0"
     unist-util-find-all-after "^3.0.2"
 
-"@sweetalert2/theme-bootstrap-4@^5.0.8":
-  version "5.0.12"
-  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-bootstrap-4/-/theme-bootstrap-4-5.0.12.tgz#324956317e00f228246a7b55013cdea516dddbed"
-  integrity sha512-n2a4efzRS4yDDAL0tr+4jLuBnKn5oaXX/KXNMmhKbFNClQuZcf5NkMasLwYFUuJ5eHHZf5MLCpdKoIywerSGrg==
+"@sweetalert2/theme-bootstrap-4@^5.0.15":
+  version "5.0.15"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-bootstrap-4/-/theme-bootstrap-4-5.0.15.tgz#bede688c13784acf73e01352e00d3e7fb8d69e01"
+  integrity sha512-WsGXk67Yz3Txe3lJA4FNqQCKbQQ6yJLpVUknyGcoESVvwHm+UBBlIMHAcKuLvF+WXK9Rbq8gXhpDIU8ISoiPlQ==
 
 "@tootallnate/once@1":
   version "1.1.2"
